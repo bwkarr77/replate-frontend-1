@@ -7,7 +7,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: green;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,4 +19,38 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.NavBar-container {
+  background: red;
+  width: 100%;
+  /* position: fixed;
+  text-align: right;
+  position: fixed;
+  top: 0;
+  right: 0; */
+}
+.NavBar-banner {
+  position: fixed;
+  display: flex;
+
+  background: green;
+  width: 35%;
+  height: 50px;
+
+  top: 0;
+  text-align: right;
+  right: 0;
+  justify-content: space-evenly;
+}
+
+.homPage,
+.businessDetails,
+.donationsList {
+  background-image: linear-gradient(45deg, yellow, purple);
+}
+
+.testing {
+  background: darkslategray;
+  width: 100%;
 }

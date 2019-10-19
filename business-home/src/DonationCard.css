@@ -1,0 +1,20 @@
+.donationCard {
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, orange, skyblue);
+  display: flex;
+  max-width: 500px;
+  height: 400px;
+}
+
+.busCard-details {
+  /* background: magenta; */
+  opacity: 0.5;
+  width: 100%;
+}
+
+.donationCard img {
+  width: 40%;
+  height: 90%;
+  object-fit: cover;
+  align-self: center;
+}
