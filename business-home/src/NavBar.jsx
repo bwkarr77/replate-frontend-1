@@ -1,9 +1,9 @@
 import React from "react";
-import { Route, NavLink, Switch, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import BusinessDetails from "./components/BusinessDetails";
-import DonationsList from "./components/DonationsList";
-import Home from "./components/Home";
+// import BusinessDetails from "./components/BusinessDetails";
+// import DonationsList from "./components/DonationsList";
+// import Home from "./components/Home";
 
 const NavBar = () => {
   return (

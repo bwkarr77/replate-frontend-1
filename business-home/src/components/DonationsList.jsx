@@ -15,6 +15,7 @@ const DonationsList = props => {
     setSearchDon(value);
   };
   const handleSubmit = e => {
+    console.log(donations);
     e.preventDefault();
     setInfo(
       infoState.filter(ele =>
@@ -30,14 +31,13 @@ const DonationsList = props => {
   //=====
 
   //API input information testing meh
-  let info = Object.keys(props);
-  console.log("info", info);
-  // const userTest = "";
-  const userTest = 15;
-  console.log(Number.isInteger(userTest));
+  console.log("info", Object.keys(props));
+  const userTest = "";
+  // const userTest = 15;
   let inputData = [];
   //====
   useEffect(() => {
+    console.log("axios is running");
     axios
       .get(apiAdd + `${userTest}`)
       .then(results => {
@@ -54,8 +54,10 @@ const DonationsList = props => {
       })
       .catch(err => console.log(err));
   }, []);
+  console.log("after useEffect", inputData);
 
   console.log(props);
+  console.log(donations);
   return (
     <div className="donationsList">
       <SearchForm
@@ -70,8 +72,13 @@ const DonationsList = props => {
       <p>{props.name}</p>
       <p>{props.order}</p>
       <p>{props.weight}</p> */}
-
-      {<DonationCard props={props[0]} />}
+      {<DonationCard props={props} />}
+      {/* {donations.map(each => {
+        return (
+<Link key={each.id} to={'/'}
+        <DonationCard each={each} /> 
+        )
+      })} */}
     </div>
   );
 };

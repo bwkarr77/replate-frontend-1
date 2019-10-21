@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 //
 import BusinessDetails from "./components/BusinessDetails";
 import DonationsList from "./components/DonationsList";
@@ -12,27 +11,12 @@ import Home from "./components/Home";
 function App() {
   const [businessData, setBusinessData] = useState([]);
   const [donations, setDonations] = useState([]);
+  // const [donations, setDonations] = useState({ id: 0, name: "fish" });
+
   //-----Below is for testing ONLY!!! change url when REAL API is up and running----
   const apiAdd = "https://pokeapi.co/api/v2/pokemon/";
   //====^^^^^^^^^====
   let busKeys = [];
-
-  // useEffect(() => {
-  //   axios
-  //     // .get(`https://pokeapi.co/api/v2/pokemon/${userNum}`) //replace with our API when it is known
-  //     .get(`https://pokeapi.co/api/v2/pokemon/`)
-  //     // .get(` ${userNum}`)  //actual API
-  //     .then(results => {
-  //       setBusinessData(results.data.results);
-  //       console.log(results.data.results);
-  //       // busKeys=Object.keys(results.data);
-  //       console.log(
-  //         Object.keys(results.data.results),
-  //         Object.values(results.data.results)
-  //       );
-  //     })
-  //     .catch(err => console.log(err));
-  // }, []);
 
   return (
     <main>
@@ -83,7 +67,12 @@ function App() {
               );
             }}
           />
-
+          <Route
+            path="/DonationCard/:id"
+            render={props => {
+              return <DonationCard props={props} donations={donations} />;
+            }}
+          />
           {/* {console.log(Object.keys(businessData).map(e => e))} */}
           {/* <div className="testing">
             <br />
