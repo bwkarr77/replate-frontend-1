@@ -9,15 +9,16 @@ const NavBar = () => {
   return (
     <div className="NavBar-container">
       <div className="NavBar-banner">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/DonationsList">Donations</NavLink>
-        <NavLink to="/BusinessDetails">BusinessDetails</NavLink>
+        <NavLink to="/">
+          <i class="material-icons">home</i>
+        </NavLink>
+        <NavLink to="/DonationsList">
+          <i class="material-icons">fastfood</i>
+        </NavLink>
+        <NavLink to="/BusinessDetails">
+          <i class="material-icons">account_circle</i>
+        </NavLink>
       </div>
-      {/* <Switch>
-        <Route exact path={"/"} component={Home} />
-        <Route exact path={"/DonationsList"} component={DonationsList} />
-        <Route exact path={"/BusinessDetails"} component={BusinessDetails} />
-      </Switch> */}
     </div>
   );
 };

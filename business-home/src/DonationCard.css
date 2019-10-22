@@ -1,20 +1,65 @@
+p,
+h1,
+h2,
+.donations-container {
+  color: black;
+}
+
 .donationCard {
-  border-radius: 20px;
-  background-image: linear-gradient(45deg, orange, skyblue);
+  /* border-radius: 20px; */
   display: flex;
   max-width: 500px;
-  height: 400px;
+  height: auto;
 }
 
 .busCard-details {
-  /* background: magenta; */
   opacity: 0.5;
   width: 100%;
+  font-size: 20px;
+  text-align: left;
+}
+
+.busCard-details h2 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
 }
 
 .donationCard img {
-  width: 40%;
-  height: 90%;
+  width: 45%;
+  height: 100%;
   object-fit: cover;
-  align-self: center;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  border-radius: 10px;
+}
+
+section {
+  padding: 10px;
+}
+br {
+  height: 30px;
+}
+
+.bus-bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
+  .donationCard {
+    height: 130px;
+  }
+
+  .busCard-details {
+    font-size: 9px;
+  }
+  .busCard-details p {
+    font-size: 0.9rem;
+  }
+  section {
+    padding-bottom: 20px;
+  }
 }

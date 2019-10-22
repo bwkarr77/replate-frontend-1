@@ -2,39 +2,46 @@
   text-align: center;
 }
 
+p,
+h1,
+h2,
+h3 {
+  color: black;
+}
+
 .App-logo {
   height: 40vmin;
 }
 
-.App-header {
-  background-color: green;
-  min-height: 100vh;
+.Components-section {
+  background-color: #f7fbf9;
+  height: 1000px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #f7fbf9;
 }
 
 .NavBar-container {
-  background: red;
-  width: 100%;
-  /* position: fixed;
-  text-align: right;
   position: fixed;
-  top: 0;
-  right: 0; */
+  background-image: linear-gradient(120deg, #adcfb1, #2d914c);
+  width: 100%;
+  height: 200px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  z-index: 1;
 }
 .NavBar-banner {
   position: fixed;
   display: flex;
 
-  background: green;
+  background: none;
   width: 35%;
   height: 50px;
 
@@ -47,10 +54,71 @@
 .homPage,
 .businessDetails,
 .donationsList {
-  background-image: linear-gradient(45deg, yellow, purple);
+  /* background-image: linear-gradient(45deg, yellow, purple); */
 }
 
 .testing {
   background: darkslategray;
   width: 100%;
+}
+.donationsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-button {
+  background: #196d4c;
+  color: white;
+  height: 25px;
+  border: none;
+  width: 70px;
+  border-radius: 25%;
+}
+.businessDetails,
+.donationCard,
+.business-info,
+.business-current-offers {
+  box-shadow: 8px 5px 10px 1px grey;
+  border-radius: 20px;
+}
+.business-current-offers {
+  height: 200px;
+}
+
+.material-icons {
+  font-size: 70px;
+}
+
+.homePage-container {
+  width: 98%;
+  height: 100%;
+  /* display: flex; */
+  margin: auto;
+}
+.homePage-content {
+  width: 95%;
+  height: 90%;
+  border-color: grey;
+  background: white;
+  color: blue;
+}
+
+@media only screen and (max-width: 500px) {
+  .NavBar-banner {
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+  }
+  .NavBar-container {
+    height: 150px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    z-index: 1;
+  }
+  .Components-section {
+    padding: 150px 0 20px 0;
+  }
+  .blockSpace {
+    height: 10px;
+  }
 }

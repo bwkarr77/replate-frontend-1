@@ -1,39 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "../DonationCard.css";
 
 const DonationCard = props => {
-  const { base_experience, height, id, name, order, weight } = props;
-  let donationArr = props.props.donations;
-  console.log(donationArr);
-  if (donationArr.length > 0) {
-    console.log(donationArr[0].name);
-    console.log(donationArr[0].url);
-  }
-  // const listOfDonations = donationArr.map(link => {
-  //   console.log(link);
-  // });
+  const [donation, setDonation] = useState(undefined);
+  const { name, date, quantity, status, description } = props.each;
+  // console.log(props.each);
+  const propKeys = Object.keys(props.each);
+  //"id", "name", "location", "date", "time", "description", "quantity", "phone", "accepted", "status"
+  // console.log(propKeys);
 
-  // donationArr.map(each => {
-  return (
+  if (props.each !== undefined) {
+    // console.log(props.each.name, props.each.url);
+  }
+  return props.each ? (
     <section>
-      {/* {donationArr.map(each => { */}
       <div className="donationCard">
         <img
           src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=931&q=80"
           alt="test"
         ></img>
         <div className="busCard-details">
-          <h2>DonationCard:</h2>
-          {/* <p>text1: {each.name}</p> */}
-          {/* <p>text2: {each.url}</p> */}
-          <p>text3: {donationArr.name} </p>
+          <h2>{date}</h2>
+          <p>{description} (desc)</p>
+          <br />
+          <div className="bus-bottom-row">
+            <p>QTY: {quantity}</p>
+            <p>{status}(status)</p>
+          </div>
         </div>
       </div>
-      ;
     </section>
-  );
-  // });
-
+  ) : null;
   //END DONATIONCARD
 };
 

@@ -70,3 +70,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - yarn create react-app <name>
 - yarn add react-router-dom
 - yarn add axios
+
+colors:
+#F7FBF9
+#2D914C
+#196D4C
+#ADCFB1
+#0F2D2F
+#E2A26A
+#A08A6C

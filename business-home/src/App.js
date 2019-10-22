@@ -14,23 +14,21 @@ function App() {
   // const [donations, setDonations] = useState({ id: 0, name: "fish" });
 
   //-----Below is for testing ONLY!!! change url when REAL API is up and running----
-  const apiAdd = "https://pokeapi.co/api/v2/pokemon/";
+  // const apiAdd = "https://pokeapi.co/api/v2/pokemon/";
+  const apiAdd = "https://bw-replate.herokuapp.com/api/auth/business/login";
+  const apiAddFood = "https://bw-replate.herokuapp.com/api/food";
   //====^^^^^^^^^====
   let busKeys = [];
 
   return (
     <main>
       <div className="App">
-        <header className="App-header">
+        <header>
           <NavBar />
-          <p>App component Code:</p>
-          {/* <p>Object.keys(businessData):</p>
-          {//===Print Object Keys from API.get===
-          Object.keys(businessData).map(item => (
-            <p>{item}</p>
-          ))
-          //====end object Keys
-           */}
+        </header>
+        <section className="Components-section">
+          <div className="blockSpace"></div>
+          <p>Sections Displayed:</p>
           <Route
             exact
             path={"/"}
@@ -56,7 +54,6 @@ function App() {
             exact
             path={"/BusinessDetails"}
             render={props => {
-              console.log(apiAdd);
               return (
                 <BusinessDetails
                   props={props}
@@ -73,14 +70,7 @@ function App() {
               return <DonationCard props={props} donations={donations} />;
             }}
           />
-          {/* {console.log(Object.keys(businessData).map(e => e))} */}
-          {/* <div className="testing">
-            <br />
-            <p>BELOW IS JUST A TEST</p>
-            <BusinessDetails {...businessData} />
-            <DonationsList {...businessData} />
-          </div> */}
-        </header>
+        </section>
       </div>
     </main>
   );

@@ -2,18 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchForm from "./SearchForm";
 import DonationsList from "./DonationsList";
+import { getBusinessFood } from "./ApiContent";
 
 const BusinessDetails = props => {
   console.log(props);
   const { businessData, setBusinessData, apiAdd } = props; //destructuring the values brought in from the App page
   const [searchVal, setSearch] = useState("");
   const [infoState, setInfo] = useState([]);
+  const [foodList, setFoodList] = useState([]);
 
   //
   let info = Object.keys(props);
   console.log("info", info);
-  // const userTest = "";
-  const userTest = 15;
+  const userTest = "";
+  // const userTest = 15;
   console.log(Number.isInteger(userTest));
   let inputData = [];
   //====
@@ -37,9 +39,11 @@ const BusinessDetails = props => {
   };
   //=====
 
+  const dummyToken = { username: "busnessUsername", password: "pass" };
   useEffect(() => {
+    console.log("Business Axios...");
     axios
-      .get(apiAdd + `${userTest}`)
+      .post(apiAdd, { dummyToken })
       .then(results => {
         //===depends on specificity of data to look up.
         if (Number.isInteger(userTest)) {
@@ -55,27 +59,25 @@ const BusinessDetails = props => {
       .catch(err => console.log(err));
   }, []);
 
+  useEffect(() => {
+    console.log("useEffect with ApiContent.js");
+    getBusinessFood().then(data => setFoodList(data));
+  });
+
   return (
     <div className="businessDetails">
-      {/* <p>Object.keys(businessData):</p>
-      {//===Print Object Keys from API.get===
-      Object.keys(businessData).map(item => (
-        <p>{item}</p>
-      ))
-      //====end object Keys
-       */}
       <SearchForm
         searchVal={searchVal}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <h2>BusinessDetails: {props.id}</h2>
-      <p>{props.base_experience}</p>
-      <p>{props.height}</p>
-      <p>{props.id}</p>
-      <p>{props.name}</p>
-      <p>{props.order}</p>
-      <p>{props.weight}</p>
+      <h2>BusinessDetails: {props.name}</h2>
+      <p>Name: {props.name}</p>
+      <p>Pass: {props.name}</p>
+      <p>Organization: {props.name}</p>
+      <p>Address: {props.name}</p>
+      <p>email: {props.name}</p>
+      <p>phone: {props.name}</p>
     </div>
   );
 };
