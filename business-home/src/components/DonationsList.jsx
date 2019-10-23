@@ -12,6 +12,7 @@ const DonationsList = props => {
   const [searchValDon, setSearchDon] = useState("");
   const [infoState, setInfo] = useState([]);
   const [filteredDonations, setFilteredDons] = useState([]);
+  const [userToken, setUserToken] = useState([]);
 
   //====EVENT HANDLERS
   const handleChange = e => {
@@ -47,6 +48,7 @@ const DonationsList = props => {
   //
   //
 
+  //insomnia = dummytoken
   // const loginKey = { username: "busnessUsername", password: "pass" };
   // useEffect(() => {
   //   console.log("axios is running");
@@ -70,11 +72,36 @@ const DonationsList = props => {
   //   getDonations();
   // }, []);
 
+  //=================================
+  //==========TEST API===============
+  const loginTest = {
+    email: "eve.holt@reqres.in",
+    password: "cityslicka"
+  };
+  const testApi = "https://reqres.in/api/";
+  useEffect(() => {
+    const getInformation = () => {
+      console.log("testAPI running");
+      axios
+        .post(`${testApi}login`, loginTest)
+        // .get(`${testApi}users/2`)
+        .then(results => {
+          console.log(results.data.token);
+          setUserToken(results.data.token);
+          console.log(userToken);
+        })
+        .catch(err => console.log(err));
+    };
+    getInformation();
+  }, []);
+  //=========END TEST API============
+  //=================================
+
   //
-  console.log(filteredDonations);
+  // console.log(filteredDonations);
   const options = ["one", "two", "three"];
 
-  console.log("donations", donations);
+  // console.log("donations", donations);
   useEffect(() => {
     if (donations == 0) {
       setFilteredDons(dummyData);
@@ -102,7 +129,7 @@ const DonationsList = props => {
         </Dropdown>
       </div>
       <div className="donationsList">
-        {console.log(filteredDonations, donations)}
+        {/* {console.log(filteredDonations, donations)} */}
         {filteredDonations !== 0
           ? filteredDonations.map(each => {
               console.log("true");

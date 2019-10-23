@@ -36,4 +36,4 @@ export const dummyData = [
     status: "Cancelled"
   }
 ];
-console.log(dummyData);
+// console.log(dummyData);
